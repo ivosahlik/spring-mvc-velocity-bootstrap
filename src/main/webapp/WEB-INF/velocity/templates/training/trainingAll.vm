@@ -1,0 +1,9 @@
+#define($content)
+
+    #set($color = "green")
+
+    <table>
+        #tablerowsall( $color $trainingAll )
+    </table>
+
+#end

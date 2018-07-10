@@ -1,0 +1,16 @@
+#* @vtlmacrolibrary path="templates/macros/macros.vm" *#
+
+#define($content)
+
+    <p>#springMessage("Hello"): $name</p>
+    <p>#springMessage("Greetings")</p>
+
+
+    #set( $greatlakes = ["Superior","Michigan","Huron","Erie","Ontario"] )
+    #set( $color = "blue" )
+
+    <table>
+        #tablerows( $color $greatlakes )
+    </table>
+
+#end

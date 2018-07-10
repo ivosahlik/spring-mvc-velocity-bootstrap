@@ -1,0 +1,3 @@
+#define($content)
+    <p>$index</p>
+#end
