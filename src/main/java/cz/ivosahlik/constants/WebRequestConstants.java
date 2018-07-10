@@ -14,4 +14,8 @@ public class WebRequestConstants {
 
     public static final String USER_REQUEST_PARAM = "/user";
 
+    public static final String TRAINING_REQUEST_PARAM = "/training";
+    public static final String TRAININGALL_REQUEST_PARAM = "/training/all";
+    public static final String TRAININGALL1_REQUEST_PARAM = "/trainingall";
+
 }

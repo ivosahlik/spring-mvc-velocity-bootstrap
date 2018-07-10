@@ -1,5 +1,6 @@
 package cz.ivosahlik.controller;
 
+import cz.ivosahlik.constants.WebRequestConstants;
 import cz.ivosahlik.services.TrainingServices;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +21,17 @@ public class TrainingController {
     @Autowired
     private TrainingServices trainingServices;
 
-    @RequestMapping(value = "/training", method = RequestMethod.GET)
+    @RequestMapping(value = WebRequestConstants.TRAINING_REQUEST_PARAM, method = RequestMethod.GET)
     public String getOne(Model model) {
         model.addAttribute("training", trainingServices.getOne());
         logger.info(trainingServices.getOne());
         return "training/training";
     }
 
-    @RequestMapping(value = "/training/all", method = RequestMethod.GET)
+    @RequestMapping(value = {
+            WebRequestConstants.TRAININGALL_REQUEST_PARAM,
+            WebRequestConstants.TRAININGALL1_REQUEST_PARAM
+    }, method = RequestMethod.GET)
     public String getAllUser(Model model) {
         model.addAttribute("trainingAll", trainingServices.getAllUser());
         logger.info(trainingServices.getAllUser().toString());
